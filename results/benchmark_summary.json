@@ -1,0 +1,50 @@
+{
+  "runs": 30,
+  "warmup": "1 discarded pass before measurement",
+  "parameters": {
+    "runs": 30,
+    "rate": 100,
+    "resources": 1000,
+    "index_size": 10000,
+    "dim": 768,
+    "kg_nodes": 5000,
+    "queries": 200,
+    "out": "results"
+  },
+  "note": "vector_search and kg_query are substitutes per manuscript Table 10 (simulation fidelity)",
+  "results": [
+    {
+      "scenario": "ingestion",
+      "n": 30000,
+      "mean_ms": 0.086,
+      "std_ms": 0.182,
+      "p50_ms": 0.081,
+      "p95_ms": 0.122,
+      "p99_ms": 0.169,
+      "min_ms": 0.01,
+      "max_ms": 31.16
+    },
+    {
+      "scenario": "vector_search",
+      "n": 6000,
+      "mean_ms": 1.897,
+      "std_ms": 0.671,
+      "p50_ms": 1.645,
+      "p95_ms": 3.167,
+      "p99_ms": 3.643,
+      "min_ms": 1.018,
+      "max_ms": 5.575
+    },
+    {
+      "scenario": "kg_query",
+      "n": 6000,
+      "mean_ms": 14.488,
+      "std_ms": 5.187,
+      "p50_ms": 11.974,
+      "p95_ms": 24.532,
+      "p99_ms": 29.28,
+      "min_ms": 0.554,
+      "max_ms": 44.614
+    }
+  ]
+}
